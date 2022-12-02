@@ -33,6 +33,7 @@ except ImportError:
 
 from lib.collect_files import collect_files
 from lib.checks.esid import CheckEsid
+from lib.checks.esid_valid import CheckEsidValid
 from lib.checks.features import CheckFeatures
 from lib.checks.frontmatter import CheckFrontmatter
 from lib.checks.harnessfeatures import CheckHarnessFeatures
@@ -58,6 +59,7 @@ parser.add_argument('path',
 
 checks = [
     CheckEsid(),
+    CheckEsidValid("node_modules/@tc39/ecma262-biblio/biblio.json"),
     CheckFileName(),
     CheckFrontmatter(),
     CheckFeatures('features.txt'),
